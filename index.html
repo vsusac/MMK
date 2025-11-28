@@ -10,89 +10,92 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header id="main-header" class="sticky-header">
         <h1>Projektni zadatak iz <span class="highlight">MMK</span></h1>
     </header>
     
-    <main>
-        <section>
+    <main id="content">
+        <section id="o-meni" class="info-section">
             <h2>O meni</h2>
             <p>Zovem se <strong>Viktor</strong> i student sam na <em>Grafičkom fakultetu</em> u Zagrebu. Ovo mi nije prvi put da radim stranicu pa se nadam da će sve dobro ispasti haha...</p>
         </section>
         
-        <section>
+        <section id="interesi" class="info-section">
             <h2>Moji interesi</h2>
-            <p>Od malena sam volio <strong>video igre</strong> i <em>sportove</em>. Kroz godine sam isto počeo čitat <span class="comic">stripove</span> te do dan danas su mi to glavne zanimacije koje volim raditi.</p>
-            <h3>Moji najdrazi sportovi:</h3>
-            <ol>
+            <p>Od malena sam volio <strong>video igre</strong> i <em>sportove</em>. Kroz godine sam isto počeo čitat <span class="comic" data-type="hobby">stripove</span> te do dan danas su mi to glavne zanimacije koje volim raditi.</p>
+            <h3>Moji najdraži sportovi:</h3>
+            <ol class="sport-list">
                 <li>Odbojka</li>
                 <li>Hrvanje</li>
                 <li>Veslanje</li>
             </ol>
         </section>
         
-        <section>
+        <section id="ciljevi" class="info-section goals-section">
             <h2>Ciljevi projekta</h2>
-            <p>Kroz ovaj projekt primjenjujem stečeno znanje iz <strong>HTML-a</strong> i <em>CSS-a</em> te stvoriti funkcionalnu i vizualno privlačnu web stranicu (nadam se da ce ispast dobro na kraju hahaha).</p>
+            <p>Kroz ovaj projekt primjenjujem stečeno znanje iz <strong>HTML-a</strong> i <em>CSS-a</em> te stvoriti funkcionalnu i vizualno privlačnu web stranicu (nadam se da će ispasti dobro na kraju hahaha).</p>
 			<h3>Stvari koje moram iskoristiti i napraviti:</h3>
-            <ol>            
+            <ol class="task-list">            
                 <li>Naučiti složene CSS selektore</li>
                 <li>Koristiti <code>display</code>, <code>float</code>, <code>list-style</code></li>
-                <li>Poboljšati tipografiju sa <code>text-align</code></li>           
+                <li>Poboljšati tipografiju sa <code>text-align</code></li>   
+            </ol>        
         </section>
 
-        <section class="fun-facts">
+        <section id="zanimljivosti" class="fun-facts info-section">
             <h2>Zanimljivosti</h2>
             <p>Značenje HTML-a je <strong>HyperText Markup Language</strong>, a značenje CSS-a je <em>Cascading Style Sheets</em>.</p>
-            
             <p>CSS je izašao <sub>1996.</sub> godine, a HTML <sup>1993.</sup></p>
         </section>
-		<section class="table-section">
-    <h2>Tablični prikaz: HTML vs CSS</h2>
-    <table class="comparison-table">
-        <thead>
-            <tr>
-                <th colspan="2">Usporedba web tehnologija</th>
-            </tr>
-            <tr>
-                <th>Karakteristika</th>
-                <th>HTML</th>
-                <th>CSS</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="2">Osnovni podaci</td>
-                <td>HyperText Markup Language</td>
-                <td>Cascading Style Sheets</td>
-            </tr>
-            <tr>
-                <td>1993. godine</td>
-                <td>1996. godine</td>
-            </tr>
-            <tr>
-                <td>Namjena</td>
-                <td>Struktura sadržaja</td>
-                <td>Stiliziranje izgleda</td>
-            </tr>
-            <tr>
-                <td>Tip</td>
-                <td>Markup jezik</td>
-                <td>Style sheet jezik</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-		<section class="prijava">
-    <h2>Želiš li se prijaviti na radionicu?</h2>
-    <a href="prijava.html" class="btn">Idi na prijavu</a>
-</section>
+        
+        <section id="tablica" class="table-section info-section">
+            <h2>Tablični prikaz: HTML vs CSS</h2>
+            <table class="comparison-table" data-purpose="comparison">
+                <thead>
+                    <tr class="header-main">
+                        <th colspan="3">Usporedba web tehnologija</th>
+                    </tr>
+                    <tr class="header-sub">
+                        <th>Karakteristika</th>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Osnovni podaci</td>
+                        <td>HyperText Markup Language</td>
+                        <td>Cascading Style Sheets</td>
+                    </tr>
+                    <tr>
+                        <td>1993. godine</td>
+                        <td>1996. godine</td>
+                    </tr>
+                    <tr>
+                        <td>Namjena</td>
+                        <td>Struktura sadržaja</td>
+                        <td>Stiliziranje izgleda</td>
+                    </tr>
+                    <tr>
+                        <td>Tip</td>
+                        <td>Markup jezik</td>
+                        <td>Style sheet jezik</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="prijava" class="prijava-section info-section">
+            <h2>Želiš li se prijaviti na radionicu?</h2>
+            <a href="prijava.html" class="btn btn-primary" target="_blank">Idi na prijavu</a>
+        </section>
     </main>
     
-    <footer>
+    <footer id="main-footer" class="site-footer">
         <p>Nadam se da ste uživali <span class="smiley">:)</span></p>
     </footer>
 </body>
 </html>
+
 
 
