@@ -14,7 +14,7 @@
         <h1>Projektni zadatak iz <span class="highlight">MMK</span></h1>
     </header>
     
-    <main id="content">
+    <main id="content-wrapper">
         <section id="o-meni" class="info-section">
             <h2>O meni</h2>
             <p>Zovem se <strong>Viktor</strong> i student sam na <em>Grafičkom fakultetu</em> u Zagrebu. Ovo mi nije prvi put da radim stranicu pa se nadam da će sve dobro ispasti haha...</p>
@@ -22,7 +22,7 @@
         
         <section id="interesi" class="info-section">
             <h2>Moji interesi</h2>
-            <p>Od malena sam volio <strong>video igre</strong> i <em>sportove</em>. Kroz godine sam isto počeo čitat <span class="comic" data-type="hobby">stripove</span> te do dan danas su mi to glavne zanimacije koje volim raditi.</p>
+            <p>Od malena sam volio <strong>video igre</strong> i <em>sportove</em>. Kroz godine sam isto počeo čitat <span class="comic" data-hobby="strip">stripove</span> te do dan danas su mi to glavne zanimacije koje volim raditi.</p>
             <h3>Moji najdraži sportovi:</h3>
             <ol class="sport-list">
                 <li>Odbojka</li>
@@ -89,6 +89,37 @@
             <h2>Želiš li se prijaviti na radionicu?</h2>
             <a href="prijava.html" class="btn btn-primary" target="_blank">Idi na prijavu</a>
         </section>
+
+        
+<section id="video-section" class="media-section info-section">
+    <h2>Video Primjer </h2>
+    <p>Video mene kako pijem sam dok nikog nije bilo u klubu:</p>
+    <video class="responsive-video" controls poster="sakura.jpg" width="100%">
+        <source src="piva.mp4" type="video/mp4">
+        <source src="piva.webm" type="video/webm">
+        Vaš preglednik ne podržava HTML5 video.
+    </video>
+    
+    <a href="piva.mp4" download class="btn btn-primary">⬇ Preuzmi video</a>
+    
+</section>
+
+        
+<section id="pdf-section" class="media-section info-section">
+    <h2>PDF Dokument </h2>
+    <p>Random PDF koj sam otkrio u svom PCu:</p>
+    <div class="pdf-wrapper">
+        <iframe src="Graficki strojevi kol1.pdf" class="responsive-pdf" frameborder="0">
+    <object data="Graficki strojevi kol1.pdf" type="application/pdf" class="fallback-pdf">
+        <embed src="Graficki strojevi kol1.pdf" type="application/pdf" class="fallback-pdf">
+            <p>PDF se ne može prikazati. <a href="Graficki strojevi kol1.pdf" download class="btn btn-primary">⬇ Preuzmi PDF</a></p>
+        </embed>
+    </object>
+</iframe>
+    </div>
+   
+    <a href="Graficki strojevi kol1.pdf" download class="btn btn-primary">⬇ Preuzmi PDF</a>
+</section>
     </main>
     
     <footer id="main-footer" class="site-footer">
@@ -96,6 +127,5 @@
     </footer>
 </body>
 </html>
-
 
 
