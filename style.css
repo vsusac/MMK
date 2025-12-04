@@ -1,12 +1,13 @@
-/* VARIJABLE I RESET */
+/* VARIJABLE I RESET - Originalni kod*/
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --accent-color: #f1c40f;
     --text-color: #333;
-    --bg-color: #f9f9f9;
+    --bg-light: #f9f9f9;
     --white: #ffffff;
-    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -15,118 +16,137 @@
     box-sizing: border-box;
 }
 
-/*ATRIBUTNI SELEKTORI*/
-[id="content"] {
-    max-width: 800px;
-    margin: 0 auto;
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+}
+
+/* HEADER I FOOTER  */
+[id="main-header"] {
+    background-color: var(--primary-color);
+    color: #ecf0f1;
     padding: 20px;
+    margin-bottom: 30px;  
+    border-radius: 5px;
+    text-align: center;
 }
 
-[class*="section"] {
-    margin-bottom: 20px;
-}
-
-a[href="prijava.html"] {
-    position: relative;
-}
-
-a[target="_blank"]::after {
-    content: " ↗";
-    font-size: 0.8em;
-    vertical-align: super;
-}
-
-/*POZICIONIRANJE*/
 .sticky-header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: var(--shadow);
 }
 
 .site-footer {
     position: relative;
+    background-color: #34495e;
+    color: #bdc3c7;
+    padding: 20px;
+    margin-top: 40px;  
+    border-radius: 5px;
+    text-align: center;
 }
 
 .site-footer .smiley {
     position: absolute;
-    right: 20px;
+    right: 25px;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: var(--accent-color);
 }
 
-/* SLOŽENI SELEKTORI */
+/
+[id="content-wrapper"] {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 main > section {
     background-color: var(--white);
     padding: 25px;
-    border-radius: 5px;
+    margin-bottom: 25px;  
+    border-radius: 8px;
     box-shadow: var(--shadow);
 }
 
+/* Dodatni razmak za tablicu i media sekcije */
+.table-section,
+.media-section {
+    margin-top: 10px;     
+    margin-bottom: 30px;  
+}
+
+/*OSTALI ORIGINALNI STILOVI (zadržani) */
 h2 + p {
-    margin-top: 10px;
-    text-align: justify;
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #555;
 }
 
 h2 ~ p {
     margin-bottom: 15px;
 }
 
-table.comparison-table > tbody > tr > td:first-child {
+strong, .highlight {
+    color: #e74c3c;
     font-weight: 700;
-    color: var(--primary-color);
 }
 
+em {
+    color: #8e44ad;
+    font-style: italic;
+}
+
+/* === Tablični prikaz (originalni) === */
 table.comparison-table > thead > tr:first-child > th {
     background-color: #1a2a3a;
     color: var(--accent-color);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     text-align: center;
     padding: 15px;
 }
 
 table.comparison-table > thead > tr:last-child > th {
     background-color: var(--primary-color);
-    color: #ecf0f1;
+    color: var(--white);
     padding: 12px 15px;
 }
 
 .comparison-table tbody tr:nth-child(even) {
-    background-color: #f5f5f5;
+    background-color: #f8f9fa;
 }
 
 .comparison-table tbody tr:nth-child(odd) {
     background-color: var(--white);
 }
 
-strong, .highlight {
-    color: #e74c3c;
+.comparison-table td:first-child {
+    font-weight: 700;
+    color: var(--primary-color);
+    border-left: 3px solid var(--secondary-color);
 }
 
-em, [data-type="hobby"] {
-    color: #8e44ad;
-}
-
-/*  DISPLAY, FLOAT, CLEAR */
-.fun-facts {
-    display: block;
-    float: none;
-    clear: both;
-    text-align: justify;
-}
-
-.btn {
+/* === Gumbi (originalni) === */
+[class*="btn"] {
     display: inline-block;
     padding: 12px 24px;
-    margin-top: 10px;
+    margin: 10px 5px 0 0;
     border-radius: 5px;
     font-weight: 700;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: var(--transition);
+    cursor: pointer;
 }
 
 .btn-primary {
     background-color: #e74c3c;
-    color: #fff;
+    color: var(--white);
+    box-shadow: var(--shadow);
 }
 
 .btn-primary:hover {
@@ -137,8 +157,6 @@ em, [data-type="hobby"] {
 .btn--nazad {
     background-color: var(--primary-color);
     color: #ecf0f1;
-    margin: 20px auto;
-    padding: 10px 20px;
 }
 
 .btn--nazad:hover {
@@ -146,94 +164,112 @@ em, [data-type="hobby"] {
     transform: translateY(-2px);
 }
 
-.info-section::after {
-    content: "";
-    display: table;
-    clear: both;
+/* VIDEO I PDF STILOVI*/
+.responsive-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 450px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 8px;
+    margin: 20px 0;  
 }
 
-/*  TIPOGRAFIJA I PORAVNANJE */
-h1, h2, h3 {
-    font-family: 'Merriweather', serif;
-}
-
-h1 {
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-h2 {
-    font-weight: 400;
+.video-desc {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--secondary-color);
     font-style: italic;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid var(--secondary-color);
+    border-radius: 4px;
 }
 
-.comparison-table td {
-    vertical-align: middle;
-    padding: 12px 15px;
-    height: 50px;
+.pdf-wrapper {
+    display: block;
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: 20px 0;  
 }
 
-.comparison-table th {
-    text-align: left;
+.responsive-pdf {
+    width: 100%;
+    height: 600px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
 }
 
-/*MARGIN I PADDING */
-ul, ol {
-    margin-left: 20px;
-    margin-bottom: 15px;
+.fallback-pdf {
+    width: 100%;
+    height: 500px;
+    display: block;
 }
 
-li {
-    margin-bottom: 5px;
-}
 
-header {
-    background-color: var(--primary-color);
-    color: #ecf0f1;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 5px;
-    text-align: center;
-}
 
-footer {
-    background-color: #34495e;
-    color: #bdc3c7;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-/*  RESPONSIVE */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    [class*="section"] {
+/* MOBILNI */
+@media (max-width: 600px) {
+    [id="main-header"] {
         padding: 15px;
+        margin-bottom: 20px;  
     }
-
-    .site-footer .smiley {
-        position: static;
-        transform: none;
-        display: inline-block;
-        margin-left: 10px;
+    
+    main > section {
+        padding: 18px;
+        margin-bottom: 20px;  
     }
-
-    .comparison-table {
-        font-size: 0.9rem;
+    
+    .table-section,
+    .media-section {
+        margin-top: 5px;
+        margin-bottom: 25px;
+    }
+    
+    .site-footer {
+        margin-top: 30px;
+    }
+    
+    .responsive-video {
+        min-height: 280px;
+        margin: 15px 0;
+    }
+    
+    .responsive-pdf {
+        height: 400px;
     }
 }
+
+/* TABLET */
+@media (min-width: 601px) and (max-width: 1024px) {
+    main > section {
+        padding: 22px;
+        margin-bottom: 22px;
+    }
+    
+    .responsive-video {
+        min-height: 350px;
+        margin: 18px 0;
+    }
+    
+    .responsive-pdf {
+        height: 500px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1025px) {
+    body {
+        padding: 20px 40px;
+    }
+    
+    .responsive-video {
+        min-height: 500px;
+        margin: 25px 0;
+    }
+    
+    .responsive-pdf {
+        height: 650px;
+    }
+}
+
 
