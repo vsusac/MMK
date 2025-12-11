@@ -1,4 +1,4 @@
-/* VARIJABLE I RESET - Originalni kod*/
+
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
@@ -81,7 +81,7 @@ main > section {
     margin-bottom: 30px;  
 }
 
-/*OSTALI ORIGINALNI STILOVI (zadržani) */
+/*OSTALI ORIGINALNI STILOVI  */
 h2 + p {
     margin-top: 8px;
     font-size: 0.95rem;
@@ -102,7 +102,7 @@ em {
     font-style: italic;
 }
 
-/* === Tablični prikaz (originalni) === */
+*/
 table.comparison-table > thead > tr:first-child > th {
     background-color: #1a2a3a;
     color: var(--accent-color);
@@ -131,7 +131,7 @@ table.comparison-table > thead > tr:last-child > th {
     border-left: 3px solid var(--secondary-color);
 }
 
-/* === Gumbi (originalni) === */
+
 [class*="btn"] {
     display: inline-block;
     padding: 12px 24px;
@@ -271,5 +271,114 @@ table.comparison-table > thead > tr:last-child > th {
         height: 650px;
     }
 }
+
+
+.responsive-img, .responsive-audio, .responsive-embed {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+.responsive-audio {
+    min-height: 54px; /* Standardna visina audio playera */
+}
+
+.responsive-embed {
+    min-height: 500px;
+    border: 2px solid var(--primary-color);
+}
+
+.interest-map-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.map-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.map-zone span {
+    background: rgba(0,0,0,0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.map-zone:hover {
+    transform: scale(1.05);
+}
+
+.zone-game { background-image: url('game.jpg'); }
+.zone-sport { background-image: url('sport.jpg'); }
+.zone-comic { background-image: url('comic.jpg'); }
+
+@media (max-width: 768px) {
+    .interest-map-grid { grid-template-columns: 1fr; }
+}
+/*  INTERAKTIVNA MAPA  */
+.interest-map-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.map-zone {
+    position: relative;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.map-zone:hover {
+    transform: scale(1.03);
+}
+
+.map-zone img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+    display: block;
+}
+
+.zone-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .interest-map-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 
