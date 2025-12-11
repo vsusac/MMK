@@ -120,6 +120,63 @@
    
     <a href="Graficki strojevi kol1.pdf" download class="btn btn-primary">⬇ Preuzmi PDF</a>
 </section>
+
+        <!-- === NOVE MULTIMEDIJSKE SEKCIJE DODANE OVDJE === -->
+        
+        <section id="multimedija-galerija" class="media-section info-section">
+            <h2>Galerija multimedija</h2>
+            <p>Prikaz različitih multimedijskih elemenata:</p>
+            
+            <h3>Standardna slika</h3>
+            <img src="cvijet.jpg" alt="Primjer slike" width="400" height="300" class="responsive-img">
+            
+            <h3>Responsivna slika </h3>
+            <picture>
+        <source media="(max-width: 600px)" srcset="cvjece-mobitel.jpg">
+        
+        <source media="(max-width: 1024px)" srcset="cvjece-tablet.jpg">
+        
+        <img src="cvjece-desktop.jpg" alt="Moja responsivna slika" class="responsive-img">
+    </picture>
+        </section>
+
+        <section id="audio-section" class="media-section info-section">
+            <h2>Audio demonstracija</h2>
+            <p>Primjer audio elementa:</p>
+            <audio controls class="responsive-audio">
+                <source src="bbxdia.mp3" type="audio/mpeg">
+                Vaš preglednik ne podržava audio element.
+            </audio>
+        </section>
+
+        <section id="interaktivna-mapa" class="media-section info-section">
+    <h2>Interaktivna mapa interesa</h2>
+    <p>Kliknite na područja za više informacija:</p>
+    
+    <div class="interest-map-grid">
+        <!-- PROMIJENI SLIKU: stavi svoju datoteku u src -->
+        <a href="https://wikipedia.org/wiki/Video_game" target="_blank" class="map-zone">
+            <img src="atari.jpg" alt="Video igre">
+            <span class="zone-title">Video igre</span>
+        </a>
+
+        <!-- PROMIJENI SLIKU: stavi svoju datoteku u src -->
+        <a href="https://wikipedia.org/wiki/Sports" target="_blank" class="map-zone">
+            <img src="hrvanje.jpg" alt="Sportovi">
+            <span class="zone-title">Sportovi</span>
+        </a>
+
+        <!-- PROMIJENI SLIKU: stavi svoju datoteku u src -->
+        <a href="https://wikipedia.org/wiki/Comic_book" target="_blank" class="map-zone">
+            <img src="stripovi.png" alt="Stripovi">
+            <span class="zone-title">Stripovi</span>
+        </a>
+    </div>
+
+    <h3>Embed demonstracija (PDF alternativa)</h3>
+    <embed src="mmk7.pdf" type="application/pdf" width="100%" height="500px" class="responsive-embed">
+</section>
+
     </main>
     
     <footer id="main-footer" class="site-footer">
@@ -127,5 +184,6 @@
     </footer>
 </body>
 </html>
+
 
 
