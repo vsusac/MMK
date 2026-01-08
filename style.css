@@ -382,3 +382,268 @@ table.comparison-table > thead > tr:last-child > th {
 
 
 
+.comparison-table tbody tr {
+    transition: var(--transition);
+    transform: translateX(0);
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #e8f4f8 !important;
+    transform: translateX(10px);
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.15);
+}
+
+.comparison-table tbody td {
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.comparison-table tbody tr:hover td:first-child {
+    border-left: 3px solid var(--accent-color);
+    color: var(--secondary-color);
+}
+
+
+.sport-list li,
+.task-list li {
+    transition: var(--transition);
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 5px 0;
+    transform: scale(1);
+}
+
+.sport-list li:hover,
+.task-list li:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    transform: scale(1.02);
+    box-shadow: var(--shadow);
+}
+
+
+.responsive-img,
+#multimedija-galerija img {
+    transition: var(--transition);
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.responsive-img:hover,
+#multimedija-galerija img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+
+.map-zone {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.map-zone img {
+    transition: var(--transition);
+    transform: scale(1) translateZ(0);
+}
+
+.map-zone:hover img {
+    transform: scale(1.1) translateZ(50px) rotateY(-5deg);
+}
+
+.map-zone .zone-title {
+    transition: var(--transition);
+    transform: translateY(0);
+}
+
+.map-zone:hover .zone-title {
+    transform: translateY(-10px);
+    background: rgba(52, 152, 219, 0.95);
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+select,
+textarea {
+    transition: var(--transition);
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    transform: scale(1);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    transform: scale(1.02);
+    outline: none;
+}
+
+
+.btn-primary,
+.btn--nazad {
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover,
+.btn--nazad:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn-primary:active,
+.btn--nazad:active {
+    transform: translateY(0) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+.sticky-header h1 {
+    transition: var(--transition);
+}
+
+.sticky-header:hover h1 {
+    transform: scale(1.03);
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.info-section {
+    transition: var(--transition);
+    transform: translateY(0);
+}
+
+.info-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* 9. ROTIRAJUCI SMILEY FOOTER */
+.site-footer .smiley {
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.site-footer:hover .smiley {
+    transform: translateY(-50%) rotate(360deg) scale(1.5);
+    color: #e67e22;
+}
+
+a.nav-link,
+a[href^="https"] {
+    transition: var(--transition);
+    position: relative;
+}
+
+a.nav-link:hover,
+a[href^="https"]:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+/* 11. AUDIO PLAYER HOVER EFEKT */
+.responsive-audio {
+    transition: var(--transition);
+    transform: scale(1);
+}
+
+.responsive-audio:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.responsive-pdf,
+.fallback-pdf {
+    transition: var(--transition);
+}
+
+.responsive-pdf:hover,
+.fallback-pdf:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.responsive-video {
+    transition: var(--transition);
+}
+
+.responsive-video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+
+.comic {
+    transition: var(--transition);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.comic:hover {
+    transform: skewX(-10deg) scale(1.1);
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.interaktivni-kviz {
+    perspective: 1000px;
+}
+
+.kviz-pitanje {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px 0;
+    transition: var(--transition);
+    transform: rotateY(0deg);
+    cursor: pointer;
+}
+
+.kviz-pitanje:hover {
+    transform: rotateY(5deg) scale(1.02);
+}
+
+.kviz-odgovor {
+    transition: var(--transition);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.kviz-pitanje:active .kviz-odgovor {
+    max-height: 200px;
+    opacity: 1;
+    transform: scale(1);
+    padding-top: 15px;
+}
+
+/* RESPONSIVE PRILAGODBE ZA MOBILE */
+@media (max-width: 600px) {
+    .comparison-table tbody tr:hover {
+        transform: translateX(5px);
+    }
+    
+    .map-zone:hover img {
+        transform: scale(1.05) translateZ(0);
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    select:focus,
+    textarea:focus {
+        transform: scale(1.01);
+    }
+}
+
+
+
