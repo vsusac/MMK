@@ -645,5 +645,184 @@ a[href^="https"]:hover {
     }
 }
 
+/* ============================================
+   CSS ANIMACIJE I SLOŽENI SELEKTORI
+   ============================================ */
+
+/* @KEYFRAMES DEFINICIJE */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(0px); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes colorCycle {
+    0% { background-color: #e74c3c; }
+    25% { background-color: #f1c40f; }
+    50% { background-color: #2ecc71; }
+    75% { background-color: #3498db; }
+    100% { background-color: #e74c3c; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* ANIMIRANI ELEMENTI */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--bg-light);
+    border-top: 5px solid var(--secondary-color);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+
+.floating-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    animation: float 3s ease-in-out infinite;
+    margin: 20px 0;
+}
+
+.btn-color-cycle {
+    background-color: #e74c3c;
+    animation: colorCycle 4s infinite, pulse 2s infinite;
+}
+
+.btn-shake:active {
+    animation: shake 0.5s;
+}
+
+/* ============================================
+   SLOŽENI CSS SELEKTORI
+   ============================================ */
+
+/*  DIREKTNI CHILD SELEKTOR (>) */
+section.media-section > h3 {
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 5px;
+}
+
+/*  ADJACENT SIBLING SELEKTOR (+) */
+.demo-list li + li {
+    border-top: 1px dashed #ccc;
+}
+
+/*  GENERAL SIBLING SELEKTOR (~) */
+.btn-group .btn ~ .btn {
+    margin-left: 15px;
+    background-color: var(--primary-color);
+}
+
+/*  specifičnost za drugu stavku */
+section#animacija-dio .demo-list li:nth-child(2) {
+    background-color: var(--accent-color) !important; /* Žuta */
+    color: var(--primary-color) !important; /* Tamno plava */
+    font-weight: bold !important;
+    padding: 12px 15px !important;
+    border-left: 4px solid var(--primary-color) !important;
+}
+
+.demo-list li:nth-child(even) {
+    background-color: #f0f0f0;
+    padding-left: 20px;
+}
+
+/*  :nth-of-type() SELEKTOR */
+section.info-section:nth-of-type(odd) {
+    border-left: 5px solid var(--primary-color);
+}
+
+section.info-section:nth-of-type(even) {
+    border-right: 5px solid var(--secondary-color);
+}
+
+/*  KOMBINACIJA ID I KLASA */
+#animacija-dio .animacija-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+#animacija-dio.animirano {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/*  VIŠESTRUKA KOMBINACIJA SELEKTORA */
+section#video-section.media-section > h2 + p {
+    font-style: italic;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/*  KOMBINACIJA KLASA */
+.btn-group .btn.btn-primary {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* HOVER EFEKTI SA ANIMACIJAMA */
+.animacija-container:hover .loader {
+    animation-duration: 0.5s;
+}
+
+.floating-box:hover {
+    animation-play-state: paused;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* RESPONSIVE PRILAGODBE */
+@media (max-width: 600px) {
+    .animacija-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .btn-group .btn ~ .btn {
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+    
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0px); }
+    }
+}
+/* porpavak: Hover za gumbe u grupi */
+.btn-group .btn ~ .btn:hover {
+    background-color: #c0392b; /* ista crvena kao na Gumbu 1 */
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* popravak: Hover za prvi gumb u grupi */
+.btn-group .btn:first-child:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+
 
 
